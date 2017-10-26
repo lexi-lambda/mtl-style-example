@@ -23,3 +23,7 @@ The code is divided into the following modules:
     This includes the “fake” test-time implementation of the interfaces defined in `MTLStyleExample.Interfaces`, and these implementations are used in `MTLStyleExample.MainSpec`. These attempt to implement the interfaces as faithfully as possible without needing to use an actual file system, the real system clock, or the real standard output.
 
     This code ends up actually being some of the most verbose in the entire project, but remember that each of these fake implementations only needs to be written *once* per effect, so even as the program logic grows, this module never needs to change.
+
+For some additional information on one of the techniques used in this project (that is, using `DefaultSignatures` to make lifting instances derivable), see my blog post [Lifts for free: making mtl typeclasses derivable][lifts-for-free].
+
+[lifts-for-free]: https://lexi-lambda.github.io/blog/2017/04/28/lifts-for-free-making-mtl-typeclasses-derivable/
