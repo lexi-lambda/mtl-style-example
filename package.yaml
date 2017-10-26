@@ -1,0 +1,63 @@
+name: mtl-style-example
+version: '0.0.0'
+category: Other
+synopsis: A small example of using mtl style to unit test effectful code.
+description: A small example of using mtl style to unit test effectful code.
+maintainer: Alexis King
+
+extra-source-files:
+- package.yaml
+- README.md
+- stack.yaml
+
+ghc-options: -Wall
+default-extensions:
+- DefaultSignatures
+- GADTs
+- GeneralizedNewtypeDeriving
+- LambdaCase
+- OverloadedStrings
+
+library:
+  dependencies:
+  - base
+  - monad-logger
+  - monad-time
+  - mtl
+  - text
+  - time
+  - transformers
+  source-dirs: library
+
+executables:
+  mtl-style-example:
+    dependencies:
+    - base
+    - mtl-style-example
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: executable
+
+tests:
+  mtl-style-example-test-suite:
+    dependencies:
+    - base
+    - bytestring
+    - fast-logger
+    - hspec
+    - monad-logger
+    - monad-time
+    - mtl
+    - mtl-style-example
+    - text
+    - time
+    - transformers
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: test-suite
