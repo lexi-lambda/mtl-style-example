@@ -90,7 +90,7 @@ runTickingClockT' d t (ClockT x) = evalStateT x (ticks t)
   where ticks t' = ClockTick t' (ticks (addUTCTime d t'))
 
 -- | Runs a computation with a clock that replays the provided list of times, in
--- order. If the time list of times is exhausted, 'currentTime' will throw an
+-- order. If the list of times is exhausted, 'currentTime' will throw an
 -- exception the next time it is called.
 runPresetClockT :: Monad m => [UTCTime] -> ClockT m a -> m a
 runPresetClockT ts (ClockT x) = evalStateT x (foldr ClockTick ClockEndOfTime ts)
