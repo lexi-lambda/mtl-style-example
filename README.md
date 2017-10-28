@@ -12,7 +12,7 @@ The code is divided into the following modules:
 
   - #### `MTLStyleExample.Interfaces`
 
-    This module contains the mtl-style typeclasses that are used to decouple the effect interfaces used in the code from their implementations. It also includes implementations of some of the interfaces in `IO`, which are trivial by design—the real implementations must be trivial, or there is logic that is not be under test coverage!
+    This module contains the mtl-style typeclasses that are used to decouple the effect interfaces used in the code from their implementations. It also includes implementations of some of the interfaces in `IO`, which are trivial by design—the real implementations must be trivial, or there is logic that is not under test coverage!
 
   - #### `MTLStyleExample.MainSpec`
 
